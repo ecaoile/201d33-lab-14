@@ -7,7 +7,7 @@ function loadCart() {
   var cartAsString = localStorage.getItem('cart');
   var usableCart = JSON.parse(cartAsString);
   if (usableCart && cartAsString.length) {
-    Cart.allItems = usableCart;
+    Cart = usableCart;
     console.log('Loaded from local storage');
     return;
   }
@@ -22,7 +22,7 @@ function showCart() {
   for (var i in Cart) {
     console.log(Cart[i]);
 
-    // TODO: Create a TR    
+    // TODO: Create a TR
     var trElement = document.createElement('tr');
 
     // TODO: Create a TD for the quantity and the item
@@ -41,6 +41,9 @@ function showCart() {
 
 function removeItemFromCart() {
   // TODO: When a delete link is clicked, rebuild the Cart array without that item
+
+  Cart.splice(this.item);
+  Cart.splice(this.quantity);
   // TODO: Save the cart back to local storage
   // TODO: Re-draw the cart table
 }
