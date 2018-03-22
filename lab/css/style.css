@@ -1,0 +1,30 @@
+* {
+    boxed-sized: border-box;
+}
+
+body {
+    background: rgb(66, 170, 244)
+}
+
+section, canvas {
+    padding: 30px;
+    border: 2px solid red;
+  }
+
+header h1 {
+    color: purple;
+    font-family: 'Faster One', cursive;
+    height: 50px;
+    text-align: center;
+    width: 50x;
+    font-size: 30px;
+
+}
+
+li {
+   text-align: center;
+   font-family: 'Gloria Hallelujah', cursive;
+ 
+}
+
+
