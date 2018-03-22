@@ -17,12 +17,26 @@ function loadCart() {
 function showCart() {
 
   // TODO: Find the table
-
+  var cartTable = document.getElementById('cart');
   // TODO: Iterate over the items in the cart
-  // TODO: Create a TR
-  // TODO: Create a TD for the quantity and the item
-  // TODO: Add the TR to the TBODY and both TD's to the TR
+  for (var i in Cart) {
+    console.log(Cart[i]);
 
+    // TODO: Create a TR    
+    var trElement = document.createElement('tr');
+
+    // TODO: Create a TD for the quantity and the item
+    var tdItem = document.createElement('td');
+    tdItem.textContent = Cart.item;
+
+    var tdQuantity = document.createElement('td');
+    tdQuantity.textContent = Cart.quantity;
+
+    // TODO: Add the TR to the TBODY and both TD's to the TR
+    trElement.appendChild(tdItem);
+    trElement.appendChild(tdQuantity);
+    cartTable.appendChild(trElement);
+  }
 }
 
 function removeItemFromCart() {
