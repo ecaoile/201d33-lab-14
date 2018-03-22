@@ -4,6 +4,13 @@ var Cart = [];
 
 function loadCart() {
   // TODO: Pull the cart (if it exists) from Local Storage and make available to this app
+  var cartAsString = localStorage.getItem('cart');
+  var usableCart = JSON.parse(cartAsString);
+  if (usableCart && cartAsString.length) {
+    Cart.allItems = usableCart;
+    console.log('Loaded from local storage');
+    return;
+  }
 }
 
 // TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
