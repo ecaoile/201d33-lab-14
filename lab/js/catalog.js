@@ -37,12 +37,29 @@ function saveCartToLocalStorage() {
 
 function updateCounter() {
   // TODO: Update the cart count in the header
-  //var itemQuantity = document.getElementById('itemCount');
-  //itemQuantity.appendChild(event.target.quantity.value);
+  var itemQuantity = document.getElementById('itemCount');
+  itemQuantity.innerHTML = '';
+  var pElement = document.createElement('p');
+  pElement.textContent = Cart.allItems.length;
+  itemQuantity.appendChild(pElement);
 }
 
 function updateCartPreview() {
   // TODO: Show the selected item & quantity in the cart div
+  var cartContents = document.getElementById('cartContents');
+  var trElement = document.createElement('tr');
+
+  var tdElement = document.createElement('td');
+  var addedItem = event.target.items.value;
+  var addedQuantity = event.target.quantity.value;
+  tdElement.textContent = 'You have added ' + addedQuantity + ' ' + addedItem + ' to your cart.';
+  trElement.appendChild(tdElement);
+  /*trElement.appendChild(itemElement);
+
+  var quantityElement = document.createElement('td');
+  quantityElement.textContent = event.target.quantity.value;
+  //trElement.appendChild(quantityElement);*/
+  cartContents.appendChild(trElement);
 }
 
 // TODO: Put an event listener on the #catalog so that you can run the "handleSubmit" method when user submits the form (adding an item to their cart)

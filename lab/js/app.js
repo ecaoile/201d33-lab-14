@@ -2,9 +2,9 @@
 
 // DONE: Create a "Cart" constructor that holds quantity, item, an an array of items in the cart
 
-var Cart = function (quantity, item) {
-  this.quantity = quantity;
+var Cart = function (item, quantity) {
   this.item = item;
+  this.quantity = quantity;
   Cart.allItems.push(this);
 };
 Cart.allItems = [];
