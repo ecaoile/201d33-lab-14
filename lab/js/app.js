@@ -1,13 +1,13 @@
 'use strict';
 
-// TODO: Create a "Cart" constructor that holds quantity, item, an an array of items in the cart
-var itemArray = [];
+// DONE: Create a "Cart" constructor that holds quantity, item, an an array of items in the cart
 
-var Cart = function (quantity, item) {
-  this.quantity = quantity;
+var Cart = function (item, quantity) {
   this.item = item;
-  Cart.itemArray.push(this);
+  this.quantity = quantity;
+  Cart.allItems.push(this);
 };
+Cart.allItems = [];
 
 // Product Contructor
 var Product = function (filePath, name) {
